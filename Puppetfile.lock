@@ -18,7 +18,7 @@ GIT
 GIT
   remote: git://github.com/narkisr/puppet-supernal.git
   ref: master
-  sha: 0c4ab877e74cb5a6a6c42e17e994dcc590d70b58
+  sha: 29af0c91be2c5bc399f93cc73d52939b8980650a
   specs:
     supernal (0.0.1)
 
