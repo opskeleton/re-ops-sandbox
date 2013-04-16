@@ -1,8 +1,22 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    arr-pm (0.0.8)
+      cabin (> 0)
+    backports (2.6.2)
+    cabin (0.6.0)
+    clamp (0.3.1)
     diff-lcs (1.2.3)
     facter (1.6.18)
+    fpm (0.4.33)
+      arr-pm (~> 0.0.8)
+      backports (= 2.6.2)
+      cabin (>= 0.6.0)
+      clamp (= 0.3.1)
+      json (~> 1.7.7)
+      open4
+    fpm-cookery (0.13.0)
+      facter
     hiera (1.2.0)
       json_pure
     json (1.7.7)
@@ -10,6 +24,7 @@ GEM
     librarian-puppet (0.9.8)
       json
       thor (~> 0.15)
+    open4 (1.3.0)
     opskeleton (0.2.0)
       thor
     puppet (3.1.1)
@@ -33,6 +48,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  fpm
+  fpm-cookery
   librarian-puppet
   opskeleton
   puppet
