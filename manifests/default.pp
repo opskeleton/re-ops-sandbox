@@ -1,6 +1,6 @@
 group{ 'puppet': ensure  => present }
 
-node supernal {
+node default {
   class{'supernal':
     user    => 'vagrant',
     appname => 'web'
