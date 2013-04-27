@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
 	machine.vm.box_url = 'http://ubuntuone.com/66A7lTtTcOnjBuOpUsn9P2' 
 	machine.vm.network :public_network
 	machine.vm.hostname = "#{s}.local"
-	machine.vm.network :private_network, ip: "192.168.1.#{i}"
+	machine.vm.network :private_network, ip: "192.168.2.#{i}"
 
 	machine.vm.provider :virtualbox do |vb|
 	  vb.customize ['modifyvm', :id, '--memory', 512, '--cpus', 2]
