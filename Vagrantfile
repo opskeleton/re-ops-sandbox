@@ -2,9 +2,11 @@
 # vi: set ft=ruby :
 Vagrant.configure("2") do |config|
 
+  `VBoxManage setproperty machinefolder ~/Virtualbox`
+
   %w(supa supb).to_enum.with_index(26).each do |s,i|
     config.vm.define s.to_sym do |machine|
-	machine.vm.box = 'ubuntu-12.10_puppet-3' 
+	machine.vm.box = 'ubuntu-12.10_puppet-3.1' 
 	machine.vm.box_url = 'http://ubuntuone.com/66A7lTtTcOnjBuOpUsn9P2' 
 	machine.vm.network :public_network
 	machine.vm.hostname = "#{s}.local"
