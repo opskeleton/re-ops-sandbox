@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-BASE_NET = '192.168.3'
+BASE_NET = ENV['BASE_NET'] || '192.168.2'
 
 Vagrant.configure("2") do |config|
 
