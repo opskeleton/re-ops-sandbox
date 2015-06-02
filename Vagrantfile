@@ -1,14 +1,17 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
+
+BASE_NET = '192.168.3'
+
 Vagrant.configure("2") do |config|
 
   `VBoxManage setproperty machinefolder ~/Virtualbox`
 
   %w(supa supb).to_enum.with_index(26).each do |s,i|
     config.vm.define s.to_sym do |machine|
-	machine.vm.box = 'ubuntu-13.04_puppet-3.3.1' 
-	config.vm.network :public_network, {:ip => "192.168.3.20#{i}", :bridge => 'eth0'}
-	machine.vm.network :private_network, ip: "192.168.2.#{i}"
+	machine.vm.box = 'ubuntu-14.10_puppet-3.7.3' 
+	config.vm.network :public_network, {:bridge => 'eth0'}
+	machine.vm.network :private_network, ip: "#{BASE_NET}.#{i}"
 	machine.vm.hostname = "#{s}.local"
 
 	machine.vm.provider :virtualbox do |vb|
