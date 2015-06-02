@@ -1,31 +1,8 @@
 FORGE
-  remote: http://forge.puppetlabs.com
+  remote: https://forgeapi.puppetlabs.com
   specs:
-    domcleal/augeasproviders (0.6.0)
-    erwbgy/ssh (0.2.1)
-      domcleal/augeasproviders (>= 0.5.1)
-    puppetlabs/apt (1.1.0)
-      puppetlabs/stdlib (>= 2.2.1)
-    puppetlabs/stdlib (4.0.2)
-
-GIT
-  remote: git://github.com/mstrauss/puppet-editfile.git
-  ref: master
-  sha: 884efdc0997af667f24625e696630e6b1db5a952
-  specs:
-    editfile (0.0.1)
-
-GIT
-  remote: git://github.com/narkisr/puppet-supernal.git
-  ref: master
-  sha: 29af0c91be2c5bc399f93cc73d52939b8980650a
-  specs:
-    supernal (0.0.1)
+    puppetlabs-stdlib (4.6.0)
 
 DEPENDENCIES
-  editfile (>= 0)
-  erwbgy/ssh (>= 0)
-  puppetlabs/apt (>= 0)
-  puppetlabs/stdlib (>= 0)
-  supernal (>= 0)
+  puppetlabs-stdlib (>= 0)
 
