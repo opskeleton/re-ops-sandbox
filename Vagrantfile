@@ -7,9 +7,9 @@ Vagrant.configure("2") do |config|
 
   `VBoxManage setproperty machinefolder ~/Virtualbox`
 
-  %w(supa supb).to_enum.with_index(26).each do |s,i|
+  %w(supa supb).to_enum.with_index(25).each do |s,i|
     config.vm.define s.to_sym do |machine|
-	machine.vm.box = 'ubuntu-14.10_puppet-3.7.3' 
+	machine.vm.box = 'ubuntu-14.10_puppet-3.7.5' 
 	config.vm.network :public_network, {:bridge => 'eth0'}
 	machine.vm.network :private_network, ip: "#{BASE_NET}.#{i}"
 	machine.vm.hostname = "#{s}.local"
