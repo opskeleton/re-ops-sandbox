@@ -8,7 +8,7 @@ FORGE
 GIT
   remote: git://github.com/pulling-strings/puppet-boxes.git
   ref: master
-  sha: 83db0d656a443c2c335c96623b0db38083eaf638
+  sha: 5d9015bab03f266e56945ff8e03da2223991ab60
   specs:
     strings-boxes (0.1.0)
       attachmentgenie-ufw (>= 1.4.9)
