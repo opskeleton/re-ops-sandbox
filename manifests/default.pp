@@ -1,4 +1,14 @@
 node default {
+
+  if $hostname == 'supa' {
+    include boxes
+    File['/var/boxes'] ->
+
+    file{'/var/boxes/1':
+      ensure  => exists
+    }
+  }
+
   ssh_authorized_key { 'ronen@lepus':
     user => 'vagrant',
     type => 'ssh-rsa',
