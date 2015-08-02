@@ -5,7 +5,8 @@ node default {
     File['/var/boxes'] ->
 
     file{'/var/boxes/1':
-      ensure  => exists
+      ensure  => present,
+      content => 'this is alive'
     }
   }
 
