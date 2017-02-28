@@ -9,6 +9,11 @@ node default {
       content => 'this is alive'
     }
   }
+  if $hostname == 'supb' {
+    package{'git':
+      ensure  => present
+    }
+  }
 
   ssh_authorized_key { 'ronen@lepus':
     user => 'vagrant',
