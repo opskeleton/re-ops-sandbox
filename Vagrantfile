@@ -5,20 +5,13 @@ BASE_NET = ENV['BASE_NET'] || '192.168.2'
 
 Vagrant.configure("2") do |config|
 
-  `VBoxManage setproperty machinefolder ~/Virtualbox`
-
   %w(supa supb).to_enum.with_index(25).each do |s,i|
-    config.vm.define s.to_sym do |machine|
-	machine.vm.box = 'ubuntu-14.10_puppet-3.7.5' 
-	config.vm.network :public_network, {:bridge => 'eth0'}
-	machine.vm.network :private_network, ip: "#{BASE_NET}.#{i}"
-	machine.vm.hostname = "#{s}.local"
+    config.vm.define s.to_sym do |node|
+	node.vm.box = 'ubuntu-16.04.1_puppet-3.8.7'
+	node.vm.network :private_network, ip: "#{BASE_NET}.#{i}"
+	node.vm.hostname = "#{s}.local"
 
-	machine.vm.provider :virtualbox do |vb|
-	  vb.customize ['modifyvm', :id, '--memory', 1024, '--cpus', 2]
-	end
-
-	machine.vm.provision :puppet do |puppet|
+	node.vm.provision :puppet do |puppet|
 	  puppet.manifests_path = 'manifests'
 	  puppet.manifest_file  = 'default.pp'
 	  puppet.options = '--modulepath=/vagrant/modules:/vagrant/static-modules --hiera_config /vagrant/hiera_vagrant.yaml'
