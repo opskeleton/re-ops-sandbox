@@ -1,5 +1,9 @@
 node default {
 
+  package{'sysstat':
+    ensure  => present
+  }
+
   if $hostname == 'supa' {
     include boxes
     File['/var/boxes'] ->
