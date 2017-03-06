@@ -5,7 +5,7 @@ BASE_NET = ENV['BASE_NET'] || '192.168.2'
 
 Vagrant.configure("2") do |config|
 
-  %w(supa supb).to_enum.with_index(25).each do |s,i|
+  %w(supa supb supc supd).to_enum.with_index(25).each do |s,i|
     config.vm.define s.to_sym do |node|
 	node.vm.box = 'ubuntu-16.04.1_puppet-3.8.7'
 	node.vm.network :private_network, ip: "#{BASE_NET}.#{i}"
