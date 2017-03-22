@@ -4,6 +4,10 @@ node default {
     ensure  => present
   }
 
+  package{'stress':
+    ensure  => present
+  }
+
   if $hostname == 'supa' {
     include boxes
     File['/var/boxes'] ->
