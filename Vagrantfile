@@ -5,11 +5,18 @@ BASE_NET = ENV['BASE_NET'] || '192.168.2'
 
 Vagrant.configure("2") do |config|
 
-  %w(supa supb supc supd).to_enum.with_index(25).each do |s,i|
+  %w(re-a re-b re-c re-d).to_enum.with_index(25).each do |s,i|
     config.vm.define s.to_sym do |node|
-	node.vm.box = 'ubuntu-16.04.1_puppet-3.8.7'
-	node.vm.network :private_network, ip: "#{BASE_NET}.#{i}"
+	node.vm.box = 'ubuntu-16.04.2_puppet-3.8.7'
 	node.vm.hostname = "#{s}.local"
+
+	config.vm.provider :libvirt do |domain, override|
+        override.vm.network :private_network, ip: "#{BASE_NET}.#{i}"
+        domain.uri = 'qemu+unix:///system'
+        domain.memory = 2048
+        domain.cpus = 2
+        override.vm.synced_folder './', '/vagrant', type: 'nfs', nfs_udp: false, nfs_version: 4
+      end
 
 	node.vm.provision :puppet do |puppet|
 	  puppet.manifests_path = 'manifests'

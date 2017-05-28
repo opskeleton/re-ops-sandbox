@@ -8,24 +8,21 @@ node default {
     ensure  => present
   }
 
-  if $hostname == 'supa' {
-    include boxes
-    File['/var/boxes'] ->
-
-    file{'/var/boxes/1':
-      ensure  => present,
-      content => 'this is alive'
-    }
-  }
   if $hostname == 'supb' {
     package{'git':
       ensure  => present
     }
   }
 
-  ssh_authorized_key { 'ronen@lepus':
+  ssh_authorized_key { 'ronen@ch':
     user => 'vagrant',
     type => 'ssh-rsa',
-    key  => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDmp4knkVGw92Ok6kN95NxjjcRBbHttWX8NbA1a00hkYN1eva5uKJb0CqRukb3a/m2AuKPTn5ShDGHRwyd9TrBqgPc0ee5rFaNF3rGKsth3t/CrvnSU0dpMGUzAYy+HEeutEdPCaDDyZtP6rImtCq6KfOh8NZ4hqRwTvyraNI8fYhC/ZyGdT6sMxedEV9azar3gKahPWzuuIDmQS5ZCS2sHWrbAQODhTnuzHuQR+Toafwba1u1YtNGIi/Ro/xraVXlvOCOI75DhhMrxGE6/ruBHgorgCHwwJl+JZOInpQvtWXM+vV7GUYW2AiVIcJg+XCt12YN3Zkyk0F6G3DPujU51',
+    key  => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDV9UngiTAaDG0o0UOLjtpougTXxqV4crxKS203wqyJYMZlZ4YWzlEekLcSPEa1GJf0LO6Bf1N0t63mrTJmH0SFyEmhJYCmL4W3/bzrXDT8kAMGZ5dGe4w7vjOLhJo6iqzWfoIWvAbe9dcQH+cmc5IWwZVW1ek82rsEARoLQh5a0fKAsBEMODkB4vcj37LBpMu1aft9NqrNwOhDczGBHQgojzIbscy2OcLP+UCYx8oPLTmQ9hkJXk73HA9fRR/8I4F9eFGE0TSjkEj1RdN1bCnosPIhzN3bGJ+IdzD2Eqi3gPa67RPZr43rGkcHcNc0o0Zh5jcXOnWeTwK+mQbUJGnl',
+  }
+
+  ssh_authorized_key { 'ronen@enc':
+    user => 'vagrant',
+    type => 'ssh-rsa',
+    key  => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDUeM8xZ5mm8EINxLxVngs6WNEH1jNzBSVe53wXtErXV3bRm0G+j2F/F3Cr1VXZdmli96Xgl2P9hViczZIO6EHXCdXoOI0HrMcdXIHMuGRNw2o6xkNp61/UsLcFpmmXrDp1IyKw90kMeUPxJiS4w1Y6P16BnBMSGYr4x5zsMGg+HDGEleaMfKRuaUhSLFc9LhkNBIx4RTIjsJTjohi6MvgkeOHYKiyMq4xeFgI4bdJcduOymdkJBICc1Byy/JCRCJxc2V6HT6JIQ57+u+0+9sss1+iHby69XaHaOWAeXjwV45dpxhhkJ6SIhH/JKa25kAQ7M2Mh04LKnzZWsvXBIqAJ'
   }
 }

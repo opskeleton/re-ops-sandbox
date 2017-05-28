@@ -1,20 +1,8 @@
 FORGE
   remote: https://forgeapi.puppetlabs.com
   specs:
-    attachmentgenie-ufw (1.4.9)
-      puppetlabs-stdlib (>= 2.2.1)
-    puppetlabs-stdlib (4.15.0)
-
-GIT
-  remote: git://github.com/pulling-strings/puppet-boxes.git
-  ref: master
-  sha: 0e002bf27647417e2f0b478f7d1e932039c0a219
-  specs:
-    strings-boxes (0.1.0)
-      attachmentgenie-ufw (>= 1.4.9)
-      puppetlabs-stdlib (>= 1.0.0)
+    puppetlabs-stdlib (4.17.0)
 
 DEPENDENCIES
   puppetlabs-stdlib (>= 0)
-  strings-boxes (>= 0)
 
