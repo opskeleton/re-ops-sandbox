@@ -14,7 +14,7 @@ node default {
 
   include barbecue
 
-  package{['libzmq1', 'libzmq-jni', 'libsodium'] :
+  package{['libzmq1', 'libzmq-jni', 'libsodium']:
     ensure  => present
   }
 
