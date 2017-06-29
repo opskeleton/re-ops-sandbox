@@ -8,10 +8,14 @@ node default {
     ensure  => present
   }
 
-  if $hostname == 'supb' {
-    package{'git':
-      ensure  => present
-    }
+  package{'openjdk-8-jre-headless':
+    ensure  => present
+  }
+
+  include barbecue
+
+  package{['libzmq1', 'libzmq-jni', 'libsodium'] :
+    ensure  => present
   }
 
   ssh_authorized_key { 'ronen@ch':

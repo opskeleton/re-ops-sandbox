@@ -1,8 +1,19 @@
 FORGE
   remote: https://forgeapi.puppetlabs.com
   specs:
+    puppetlabs-apt (4.1.0)
+      puppetlabs-stdlib (< 5.0.0, >= 4.16.0)
     puppetlabs-stdlib (4.17.0)
+
+GIT
+  remote: git://github.com/pulling-strings/puppet-barbecue.git
+  ref: master
+  sha: 5941941ffa7b22f8b1fa286dbe875c1617ea70a1
+  specs:
+    strings-barbecue (0.0.2)
+      puppetlabs-apt (>= 1.5.2)
 
 DEPENDENCIES
   puppetlabs-stdlib (>= 0)
+  strings-barbecue (>= 0)
 
