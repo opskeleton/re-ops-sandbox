@@ -18,6 +18,7 @@ Vagrant.configure("2") do |config|
         override.vm.synced_folder './', '/vagrant', type: 'nfs', nfs_udp: false, nfs_version: 4
       end
 
+	node.vm.provision :shell, :inline => 'sudo apt update'
 	node.vm.provision :puppet do |puppet|
 	  puppet.manifests_path = 'manifests'
 	  puppet.manifest_file  = 'default.pp'

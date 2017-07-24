@@ -1,5 +1,7 @@
 node default {
 
+  include apt
+
   package{'sysstat':
     ensure  => present
   }
@@ -12,10 +14,11 @@ node default {
     ensure  => present
   }
 
-  include barbecue
+  class{'barbecue':} ->
 
   package{['libzmq1', 'libzmq-jni', 'libsodium']:
-    ensure  => present
+    ensure  => present,
+    require => Class['apt::update']
   }
 
   ssh_authorized_key { 'ronen@ch':
