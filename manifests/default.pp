@@ -32,4 +32,11 @@ node default {
     type => 'ssh-rsa',
     key  => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDUeM8xZ5mm8EINxLxVngs6WNEH1jNzBSVe53wXtErXV3bRm0G+j2F/F3Cr1VXZdmli96Xgl2P9hViczZIO6EHXCdXoOI0HrMcdXIHMuGRNw2o6xkNp61/UsLcFpmmXrDp1IyKw90kMeUPxJiS4w1Y6P16BnBMSGYr4x5zsMGg+HDGEleaMfKRuaUhSLFc9LhkNBIx4RTIjsJTjohi6MvgkeOHYKiyMq4xeFgI4bdJcduOymdkJBICc1Byy/JCRCJxc2V6HT6JIQ57+u+0+9sss1+iHby69XaHaOWAeXjwV45dpxhhkJ6SIhH/JKa25kAQ7M2Mh04LKnzZWsvXBIqAJ'
   }
+
+  ssh_authorized_key { 'ronen@ros':
+    user => 'vagrant',
+    type => 'ssh-rsa',
+    key  => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDHN75TlTbKYsl23Y+ek8H8NIfPL+0Ooa25+UETuG7IdB1jmuBwuNg/D0HPI1IZzXdj/aZ169qn4s0Dor9M/mpIRaA8+K0c1aEfSItF073bW0W3vp2bqBG9ELA+0DTiISJR9aaERpqZbViiHJLwsD+7SrxagJl9pkZz8/E+tc2vFvdEP6bkqwaSj5Jr6vIo04IjpRB3NT5QkeiF4P1yi/+OQ4+q66gdYsAjTUgO5Bv/BQuu8XsjHeNj/j0dnyvd+b/amxhKalAemnVR9LqDOIRqDtgXRzZ2A1Kfru4xiYnnoQptRvNZIOAgBKSrcoFclwu1rfntb2bROGGsWngBQEY3'
+  }
+
 }
