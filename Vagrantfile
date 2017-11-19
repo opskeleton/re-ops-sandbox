@@ -1,15 +1,16 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-BASE_NET = ENV['BASE_NET'] || '192.168.2'
+BASE_NET = ENV['BASE_NET'] || '10.0.0'
 
 Vagrant.configure("2") do |config|
 
   %w(re-a re-b re-c re-d).to_enum.with_index(25).each do |s,i|
     config.vm.define s.to_sym do |node|
-	node.vm.box = 'ubuntu-16.04.2_puppet-3.8.7'
+	node.vm.box = 'ubuntu-16.04.3_puppet-4.10.8'
 	node.vm.hostname = "#{s}.local"
 
+	node.vm.network :private_network, ip: "#{BASE_NET}.#{i}"
 	config.vm.provider :libvirt do |domain, override|
         override.vm.network :private_network, ip: "#{BASE_NET}.#{i}"
         domain.uri = 'qemu+unix:///system'
