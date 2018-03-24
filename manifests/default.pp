@@ -1,6 +1,7 @@
 node default {
 
   include apt
+  include langs::node
 
   package{'sysstat':
     ensure  => present

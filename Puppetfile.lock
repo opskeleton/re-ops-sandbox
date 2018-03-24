@@ -6,15 +6,16 @@ FORGE
     puppetlabs-stdlib (4.17.1)
 
 GIT
-  remote: git://github.com/pulling-strings/puppet-barbecue.git
+  remote: git://github.com/pulling-strings/puppet-langs.git
   ref: master
-  sha: 5941941ffa7b22f8b1fa286dbe875c1617ea70a1
+  sha: f40e55d42ac1e3b27050179c1bd84d0db239f266
   specs:
-    strings-barbecue (0.0.2)
-      puppetlabs-apt (>= 1.5.2)
+    strings-langs (0.2.0)
+      puppetlabs-apt (>= 2.1.0)
+      puppetlabs-stdlib (>= 4.1.0)
 
 DEPENDENCIES
   puppetlabs-apt (= 2.4.0)
   puppetlabs-stdlib (>= 0)
-  strings-barbecue (>= 0)
+  strings-langs (>= 0)
 
