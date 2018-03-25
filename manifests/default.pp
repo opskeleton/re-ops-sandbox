@@ -1,10 +1,6 @@
 node default {
 
   include apt
-  include git
-  include langs::node
-  include build::lein
-
   package{'sysstat':
     ensure  => present
   }
@@ -17,6 +13,15 @@ node default {
     ensure  => present
   }
 
+  # Shim
+
+  include git
+  include langs::node
+  include build::lein
+
+  package{'build-essential':
+    ensure  => present
+  }
   file{'/home/re-ops/code/':
     ensure => directory,
   }
