@@ -3,7 +3,7 @@ FORGE
   specs:
     puppetlabs-apt (2.4.0)
       puppetlabs-stdlib (< 5.0.0, >= 4.13.0)
-    puppetlabs-stdlib (4.17.1)
+    puppetlabs-stdlib (4.25.0)
 
 GIT
   remote: git://github.com/pulling-strings/puppet-langs.git
