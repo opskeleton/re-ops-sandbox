@@ -6,6 +6,20 @@ FORGE
     puppetlabs-stdlib (4.25.0)
 
 GIT
+  remote: git://github.com/pulling-strings/puppet-build.git
+  ref: master
+  sha: e092576976ebc3a01adfffba862cfbf2ffcc65c2
+  specs:
+    strings-build (0.2.0)
+
+GIT
+  remote: git://github.com/pulling-strings/puppet-git.git
+  ref: master
+  sha: 23dda2aebbabc1a3c5b85ec1fc1c3b14c060311a
+  specs:
+    strings-git (0.2.0)
+
+GIT
   remote: git://github.com/pulling-strings/puppet-langs.git
   ref: master
   sha: f40e55d42ac1e3b27050179c1bd84d0db239f266
@@ -17,5 +31,7 @@ GIT
 DEPENDENCIES
   puppetlabs-apt (= 2.4.0)
   puppetlabs-stdlib (>= 0)
+  strings-build (>= 0)
+  strings-git (>= 0)
   strings-langs (>= 0)
 
