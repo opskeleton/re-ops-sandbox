@@ -13,7 +13,7 @@ node default {
     ensure  => present
   }
 
-  # Shim
+  # re-conf
 
   include git
   include langs::node
@@ -24,11 +24,12 @@ node default {
   }
   file{'/home/re-ops/code/':
     ensure => directory,
+    mode   => 'a+rw'
   }
 
-  -> git::clone {'shim':
-    url   => 'git://github.com/narkisr/shim.git',
-    dst   => '/home/re-ops/code/shim',
+  -> git::clone {'re-conf':
+    url   => 'git://github.com/re-ops/re-conf.git',
+    dst   => '/home/re-ops/code/re-conf',
     owner => re-ops
   }
 
