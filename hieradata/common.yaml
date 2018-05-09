@@ -1,1 +1,16 @@
 ---
+home: '/home/re-ops'
+shell::user: 're-ops'
+shell::home: '/home/re-ops'
+
+vim::user: 're-ops'
+vim::home: '/home/re-ops'
+
+git::configure::user: 're-ops'
+git::configure::scm_user: 'narkisr'
+git::configure::scm_email: 'narkisr@gmail.com'
+
+
+baseline::home: '/home/re-ops'
+baseline::reops::user: 're-ops'
+

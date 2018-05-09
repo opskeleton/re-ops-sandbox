@@ -8,4 +8,4 @@
  - '%{::hostname}'
  - common
 :yaml:
-   :datadir: hieradata-%{::environment}
+   :datadir: hieradata
